@@ -309,6 +309,7 @@ button.btn{background:transparent;cursor:pointer}
 .hbar>.btn svg{color:#0a0e15}
 .hbar>.btn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
 .hbar>.btn:hover svg{color:#fff}
+html[data-view="kontakty"] footer .msg{display:none}
 /* mobile fixes */
 .sweep{background:none!important;animation:none!important;overflow:hidden}
 .sweep:before{content:"";position:absolute;top:0;bottom:0;left:0;width:45%;background:linear-gradient(105deg,transparent,rgba(160,210,255,.1) 50%,transparent);transform:translate3d(-100%,0,0);animation:sw2 9s ease-in-out infinite;will-change:transform}
@@ -828,7 +829,7 @@ new IntersectionObserver(([e])=>inView=e.isIntersecting).observe(deck);rst();})(
 let cur=null,busy=false,pend=null;
 const vids=v=>v.querySelectorAll('video');
 function show(v,target){if(cur)cur.classList.remove('on','enter'),vids(cur).forEach(x=>x.pause());
-v.classList.add('on','enter');cur=v;document.title=T[v.dataset.r];
+v.classList.add('on','enter');cur=v;document.documentElement.dataset.view=v.dataset.r;document.title=T[v.dataset.r];
 document.querySelectorAll('header nav a,footer nav a,.mmenu nav a').forEach(a=>{const h=a.getAttribute('href');a.toggleAttribute('aria-current',h==='#'+v.dataset.r||(h==='#'&&v.dataset.r===''))});
 vids(v).forEach(x=>{x.muted=true;if(!x.src){x.src=x.dataset.src}x.play().catch(()=>{})});
 if(target){if(target.tagName==='DETAILS')target.open=true;requestAnimationFrame(()=>target.scrollIntoView({block:'start'}))}else scrollTo(0,0);

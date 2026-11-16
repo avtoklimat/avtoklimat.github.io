@@ -295,14 +295,20 @@ nav a{position:relative}nav a[aria-current=page]:after{content:"";position:absol
 .view[data-r=""] .hero .lead{max-width:600px;font-size:clamp(17px,1.25vw,21px)}
 .hbar{max-width:none;padding-left:clamp(32px,5.5vw,110px);padding-right:clamp(32px,5.5vw,110px)}}
 /* mobile header: logo · Записаться · burger */
-@media(max-width:480px){.hbar .btn span{display:inline!important}.hbar>.btn{padding:0 13px!important;font-size:13px;height:44px}.hbar>.btn svg{display:none}.burger{width:44px;height:44px}.burger i{left:11px;right:11px}.burger i:nth-child(1){top:14px}.burger i:nth-child(2){top:20.5px}.burger i:nth-child(3){top:27px}.mopen .burger i:nth-child(1),.mopen .burger i:nth-child(3){top:20.5px}.logo b{font-size:16px}.logo img{width:34px;height:37px}.logo{gap:7px}}
+@media(max-width:480px){.hbar .btn span{display:inline!important}.hbar>.btn{padding:0 13px!important;font-size:13px;height:44px}.hbar>.btn{gap:7px}.hbar>.btn svg{display:block!important;width:16px;height:16px}.burger{width:44px;height:44px}.burger i{left:11px;right:11px}.burger i:nth-child(1){top:14px}.burger i:nth-child(2){top:20.5px}.burger i:nth-child(3){top:27px}.mopen .burger i:nth-child(1),.mopen .burger i:nth-child(3){top:20.5px}.logo b{font-size:16px}.logo img{width:34px;height:37px}.logo{gap:7px}}
 
 /* new logo lockup */
 .logo img.lf{height:44px;width:auto}
 footer .logo img.lf{height:40px}
 .wipe img{width:84px}
 @media(max-width:480px){.logo img.lf{height:32px}}
-@media(max-width:350px){.logo img.lf{height:27px}}
+@media(max-width:350px){.logo img.lf{height:27px}.hbar>.btn svg{display:none!important}}
+/* header booking button: white with black text + icon */
+button.btn{background:transparent;cursor:pointer}
+.hbar>.btn{background:#fff;color:#0a0e15;border-color:#fff}
+.hbar>.btn svg{color:#0a0e15}
+.hbar>.btn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.hbar>.btn:hover svg{color:#fff}
 /* mobile fixes */
 .sweep{background:none!important;animation:none!important;overflow:hidden}
 .sweep:before{content:"";position:absolute;top:0;bottom:0;left:0;width:45%;background:linear-gradient(105deg,transparent,rgba(160,210,255,.1) 50%,transparent);transform:translate3d(-100%,0,0);animation:sw2 9s ease-in-out infinite;will-change:transform}
